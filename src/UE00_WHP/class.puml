@@ -1,0 +1,67 @@
+@startuml
+
+abstract class Component {
++boolean[] interfaces
++Map<String, Cable> values
+
++{abstract} pull()
++{abstract} calc()
++{abstract} toString()
+
+}
+class runCircuit {
++List<Component> components
+
++ run()
++ process()
++ toString()
+}
+
+class Taster {
++ I1
+
++ press()
++{abstract} pull()
++{abstract} calc()
+}
+
+
+class FlipFlop {
++ IS
++ IR
++ State
+
++{abstract} pull()
++{abstract} calc()
+}
+
+class Cable {
++ isOn
+
++{abstract} isOn()
++{abstract} setOn()
++ toString()
+}
+
+class AND {
++ IA
++ IB
+
++{abstract} pull()
++{abstract} calc()
+}
+
+class LED {
++ I1
+
++{abstract} pull()
++{abstract} calc()
+}
+
+Component <|-- LED
+Component <|-- Taster
+Component <|-- FlipFlop
+Component <|-- AND
+@enduml
+
+
