@@ -1,0 +1,13 @@
+@startuml
+
+autonumber
+Main -> CableR : new Cable()
+Main -> CableS : new Cable()
+Main -> TasterR :  new Taster(CableR)
+Main -> TasterS :  new Taster(CableS)
+Main -> AND:   new AND(CableR, CableS)
+Main -> CableQ : new Cable()
+Main -> FF:    new FlipFlop(CableR, CableS, CableQ)
+Main -> LED:   new LED(CableQ)
+Main -> Clock:  new runCircuit(TasterR, TasterS, FlipFlop, LED)
+@enduml
