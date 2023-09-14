@@ -1,0 +1,17 @@
+@startuml
+[*] --> Q0
+
+Q0 --> Q1: S==1 && R==0
+Q1 --> Q0:  S==0 && R==1
+
+Q0 --> Q0: *
+Q1 --> Q1: *
+@enduml
+
+
+Nimmt den S,R Input und setzt den Q0,Q1 Output des FlipFlops
+S R -> Q0 Q1
+0 0 -> X X Werte bleiben unverändert (speichern)
+1 0 -> 1 0 (Setzen auf Q0, S = Set)
+0 1 -> 0 1 (Rücksetzen, R = Reset)
+1 1 -> 0 0 Werte bleiben unverändert (nicht speicherbar)
