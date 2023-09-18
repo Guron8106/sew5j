@@ -2,6 +2,7 @@ package UE00_WHP;
 
 /**
  * FlipFlop
+ *
  * @author Karanbir Guron 5AX
  */
 public class FlipFlop extends Components {
@@ -64,6 +65,7 @@ public class FlipFlop extends Components {
 
         /**
          * abstract method handling the state switches
+         *
          * @param c Context
          * @return State
          */
@@ -94,7 +96,6 @@ public class FlipFlop extends Components {
             values.get("!Q").setOn(true);
         }
     }
-
 
 
 }
