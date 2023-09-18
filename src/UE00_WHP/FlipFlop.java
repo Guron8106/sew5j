@@ -71,6 +71,29 @@ public class FlipFlop extends Components {
     }
 
 
+    /**
+     * Alle Inputs pullen
+     */
+    @Override
+    public void pull() {
+        interfaces[IS] = values.get("S").isOn();
+        interfaces[IR] = values.get("R").isOn();
+    }
+
+    /**
+     * Inputs verarbeiten und Ausgänge setzen
+     */
+    @Override
+    public void calc() {
+        state = state.handle(this);
+        if (state == State.ON) {
+            values.get("Q").setOn(true);
+            values.get("!Q").setOn(false);
+        } else {
+            values.get("Q").setOn(false);
+            values.get("!Q").setOn(true);
+        }
+    }
 
 
 
