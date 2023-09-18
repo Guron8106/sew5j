@@ -19,7 +19,7 @@ public class FlipFlop extends Components {
     /**
      * Statemachine
      */
-    //private State state;
+    private State state;
 
     /**
      * Konstruktor
@@ -35,7 +35,43 @@ public class FlipFlop extends Components {
         values.put("R", r);
         values.put("Q", q);
         values.put("!Q", nQ);
-        //this.state = State.OFF;
+        this.state = State.OFF;
     }
+
+    private enum State {
+        /**
+         * SET
+         */
+        ON {
+            @Override
+            State handle(FlipFlop c) {
+                if (!c.interfaces[IS] && c.interfaces[IR])
+                    return OFF;
+                return this;
+            }
+        },
+        /**
+         * RESET
+         */
+        OFF {
+            @Override
+            State handle(FlipFlop c) {
+                if (c.interfaces[IS] && !c.interfaces[IR])
+                    return ON;
+                return this;
+            }
+        };
+
+        /**
+         * abstract method handling the state switches
+         * @param c Context
+         * @return State
+         */
+        abstract State handle(FlipFlop c);
+    }
+
+
+
+
 
 }
