@@ -20,5 +20,29 @@ public class Taster extends Components {
         values.put("O", cable);
     }
 
+    /**
+     * Zustand ändern
+     */
+    public void press() {
+        interfaces[I1] = true;
+    }
+
+    /**
+     * Alle Inputs pullen
+     */
+    @Override
+    public void pull() {
+
+    }
+
+    /**
+     * Inputs verarbeiten und Ausgänge setzen
+     */
+    @Override
+    public void calc() {
+        values.get("O").setOn(interfaces[I1]);
+        interfaces[I1] = false;
+    }
+
 
 }
