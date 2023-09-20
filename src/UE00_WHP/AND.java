@@ -31,5 +31,22 @@ public class AND extends Components {
         values.put("X", x);
     }
 
+    /**
+     * Alle Inputs pullen
+     */
+    @Override
+    public void pull() {
+        interfaces[IA] = values.get("A").isOn();
+        interfaces[IB] = values.get("B").isOn();
+    }
+
+    /**
+     * Inputs verarbeiten und Ausgänge setzen
+     */
+    @Override
+    public void calc() {
+        values.get("X").setOn(interfaces[IA] && interfaces[IB]);
+    }
+
 
 }
