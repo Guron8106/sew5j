@@ -70,5 +70,14 @@ public class runCircuit {
         return "Tact{" + "comps=" + components + '}';
     }
 
+    /**
+     * Getter für Komponenten
+     *
+     * @return Komponenten
+     */
+    public List<Components> getComps() {
+        return components;
+    }
+
 
 }
