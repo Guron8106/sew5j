@@ -23,16 +23,28 @@ public class runCircuit {
         System.out.println(components);
         Taster t1 = (Taster) components.get(0);
         Taster t2 = (Taster) components.get(1);
-
+        process();
+        process();
+        process();
+        process();
         t1.press();
         System.out.println("T1 clicked");
-
+        process();
+        process();
+        process();
+        process();
         t2.press();
         System.out.println("T2 clicked");
-
+        process();
+        process();
+        process();
+        process();
         t1.press();
         System.out.println("T1 clicked");
-
+        process();
+        process();
+        process();
+        process();
         System.out.println("T2 clicked");
         t2.press();
 
