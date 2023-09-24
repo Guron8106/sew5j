@@ -23,8 +23,10 @@ public class runCircuit {
         System.out.println(components);
         Taster t1 = (Taster) components.get(0);
         Taster t2 = (Taster) components.get(1);
+
         t1.press();
         System.out.println("T1 clicked");
+
         t2.press();
         System.out.println("T2 clicked");
 
@@ -37,7 +39,13 @@ public class runCircuit {
     }
 
 
-
+    /**
+     * Wiederholter Prozess
+     */
+    private void process() {
+        components.forEach(Components::pull);
+        components.forEach(Components::calc);
+    }
 
 
 }
