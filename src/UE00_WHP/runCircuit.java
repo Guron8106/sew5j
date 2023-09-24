@@ -16,6 +16,27 @@ public class runCircuit {
         this.components.addAll(Arrays.asList(components));
     }
 
+    /**
+     * Run
+     */
+    public void run() {
+        System.out.println(components);
+        Taster t1 = (Taster) components.get(0);
+        Taster t2 = (Taster) components.get(1);
+        t1.press();
+        System.out.println("T1 clicked");
+        t2.press();
+        System.out.println("T2 clicked");
+
+        t1.press();
+        System.out.println("T1 clicked");
+
+        System.out.println("T2 clicked");
+        t2.press();
+
+    }
+
+
 
 
 
