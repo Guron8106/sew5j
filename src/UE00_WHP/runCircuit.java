@@ -60,5 +60,15 @@ public class runCircuit {
         components.forEach(Components::calc);
     }
 
+    /**
+     * toString
+     *
+     * @return String
+     */
+    @Override
+    public String toString() {
+        return "Tact{" + "comps=" + components + '}';
+    }
+
 
 }
