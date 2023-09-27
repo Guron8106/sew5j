@@ -15,6 +15,7 @@ public class Main {
 
         runCircuit tact = new runCircuit(t1, t2, ff, led, led2);
 
+
         tact.run();
     }
 }
