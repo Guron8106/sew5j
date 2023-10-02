@@ -2,6 +2,7 @@ package UE00_WHP;
 
 /**
  * LED
+ *
  * @author Karanbir Guron 5AX
  */
 public class LED extends Components {
@@ -13,6 +14,7 @@ public class LED extends Components {
 
     /**
      * Constructor
+     *
      * @param connection connection to the other device
      */
     public LED(Cable connection) {

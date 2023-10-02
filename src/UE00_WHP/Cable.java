@@ -2,6 +2,7 @@ package UE00_WHP;
 
 /**
  * Cable
+ *
  * @author Karanbir Guron
  */
 
@@ -14,6 +15,7 @@ public class Cable {
 
     /**
      * Getter für isON
+     *
      * @return isOn
      */
     public boolean isOn() {
@@ -22,6 +24,7 @@ public class Cable {
 
     /**
      * Setter für isOn
+     *
      * @param on turning it on
      */
     public void setOn(boolean on) {
@@ -30,6 +33,7 @@ public class Cable {
 
     /**
      * toString
+     *
      * @return String
      */
     @Override

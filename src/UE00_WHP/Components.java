@@ -15,6 +15,7 @@ public abstract class Components {
 
     /**
      * Constructor
+     *
      * @param interfaces is the amount of interfaces
      */
     public Components(int interfaces) {
@@ -30,6 +31,7 @@ public abstract class Components {
 
     /**
      * Getter für Input Zustände
+     *
      * @param input um den index anzugeben vom input
      * @return bool
      */
@@ -39,6 +41,7 @@ public abstract class Components {
 
     /**
      * toString method
+     *
      * @return String
      */
     @Override
