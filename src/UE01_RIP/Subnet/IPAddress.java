@@ -86,4 +86,29 @@ public class IPAddress implements Comparable<Object> {
         return "IPAddress [" + a3 + "." + a2 + "." + a1 + "." + a0 + "]";
     }
 
+    /**
+     * compareTo Methode der IPAdress Klasse
+     * @param o the object to be compared.
+     * @return -1,0,1
+     */
+    @Override
+    public int compareTo(Object o){
+        if(!(o instanceof IPAddress))
+            throw new IllegalArgumentException("Element ist keien IPAdresse");
+        IPAddress other = (IPAddress) o;
+        return Integer.compareUnsigned(this.getIP(),other.getIP());
+    }
+
+    /**
+     * equals Methode der IPAdress Klasse
+     * @param o the object to be compared.
+     * @return true/false
+     */
+    @Override
+    public boolean equals(Object o){
+        if(!(o instanceof IPAddress)) throw new IllegalArgumentException("Element ist keien IPAdresse");
+        IPAddress other = (IPAddress) o;
+        return getIP()==other.getIP();
+    }
+
 }
