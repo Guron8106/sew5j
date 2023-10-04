@@ -48,4 +48,42 @@ public class IPAddress implements Comparable<Object> {
                 Integer.parseInt(nums[3]));
     }
 
+    /**
+     * Creates a network mask based on the given CIDR (Classless Inter-Domain Routing) prefix.
+     * 0xFFFFFFFF = integer value -1 in 32-bit -> 256
+     *
+     * @param cidr The CIDR prefix
+     * @return An IPAddress object representing the network mask.
+     * @throws IllegalArgumentException if the CIDR prefix is outside the valid range (0-32).
+     */
+    public static IPAddress createNetmask(int cidr) {
+        if (cidr < 0 || cidr > 32) {
+            throw new IllegalArgumentException("CIDR prefix must be between 0 and 32");
+        }
+        int mask = (0xFFFFFFFF << (32 - cidr));
+        return new IPAddress(mask);
+    }
+
+    /**
+     * @return  ip address as integer
+     */
+    public int getIP() {
+        return ip;
+    }
+
+    @Override
+    public String toString() {
+        /*
+         * Converts the 32-bit integer IP address into a dotted-decimal format.
+         *
+         * @return A string representation of the IPAddress in the format "a.b.c.d".
+         */
+        int a0 = (ip       ) & 0xff;
+        int a1 = (ip >>>  8) & 0xff;
+        int a2 = (ip >>> 16) & 0xff;
+        int a3 = (ip >>> 24) & 0xff;
+
+        return "IPAddress [" + a3 + "." + a2 + "." + a1 + "." + a0 + "]";
+    }
+
 }
