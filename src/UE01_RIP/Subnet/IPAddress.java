@@ -110,5 +110,4 @@ public class IPAddress implements Comparable<Object> {
         IPAddress other = (IPAddress) o;
         return getIP()==other.getIP();
     }
-
 }
