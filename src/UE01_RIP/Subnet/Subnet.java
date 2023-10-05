@@ -52,7 +52,6 @@ public class Subnet implements Comparable {
         createMask(ip, cidr);
     }
 
-
     public IPAddress getNet() {
         return net;
     }
@@ -63,6 +62,39 @@ public class Subnet implements Comparable {
 
     public IPAddress getBroadcast() {
         return new IPAddress( net.getIP() + ~mask.getIP() );
+    }
+
+    /**
+     * is IP in this network
+     * @param ip
+     * @return
+     */
+    public boolean contains(IPAddress ip) {
+        return (ip.getIP() & mask.getIP()) == net.getIP();
+    }
+
+    @Override
+    public String toString() {
+        return "Subnet [net=" + net + ", mask=" + mask + "]";
+    }
+
+    @Override
+    public int compareTo(Object o){
+        if(!(o instanceof Subnet)) throw new IllegalArgumentException("Element ist kein Subnet");
+        Subnet other = (Subnet) o;
+        int maskCompare = other.getMask().compareTo(getMask());
+
+        if(maskCompare == 0){
+            return other.getNet().compareTo(getNet());
+        }
+        return maskCompare;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if(o.getClass() != Subnet.class) throw new ClassCastException("Wrong type");
+        Subnet other = (Subnet) o;
+        return getMask().equals(other.getMask()) && getNet().equals(other.getNet());
     }
 
 
