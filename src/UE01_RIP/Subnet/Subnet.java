@@ -52,4 +52,20 @@ public class Subnet implements Comparable {
         createMask(ip, cidr);
     }
 
+
+    public IPAddress getNet() {
+        return net;
+    }
+
+    public IPAddress getMask() {
+        return mask;
+    }
+
+    public IPAddress getBroadcast() {
+        return new IPAddress( net.getIP() + ~mask.getIP() );
+    }
+
+
+
+
 }
