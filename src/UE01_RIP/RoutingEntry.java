@@ -2,7 +2,7 @@ package UE01_RIP;
 
 public class RoutingEntry {
 
-
+/*
     private int hopCount;
 
     private final Router neighbour;
@@ -28,5 +28,7 @@ public class RoutingEntry {
     public void setHopCount(int hopCount){
         this.hopCount = hopCount;
     }
+
+ */
 
 }
