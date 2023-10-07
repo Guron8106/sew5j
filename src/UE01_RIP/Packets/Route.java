@@ -1,6 +1,6 @@
 package UE01_RIP.Packets;
 
-import UE01_RIP.RipObjects.Subnet.Subnet;
+import UE01_RIP.Subnet.Subnet;
 
 public class Route {
 
