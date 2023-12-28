@@ -1,6 +1,8 @@
 package UE03_Labyrinth;
 //TODO: Mein Name in der Javadoc
 
+import java.util.Arrays;
+
 public class Labyrinth {
 	public static String[][] maps = {{
 			"############",
@@ -65,8 +67,7 @@ public class Labyrinth {
 	 * @return char[][] des Plans
 	 */
 	public static char[][] fromStrings(String[] map) {
-		// TODO Code fehlt noch
-		return null;
+		return Arrays.stream(map).map(String::toCharArray).toArray(char[][]::new);
 	}
 
 
