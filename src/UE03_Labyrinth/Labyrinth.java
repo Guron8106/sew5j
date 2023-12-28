@@ -106,6 +106,25 @@ public class Labyrinth {
 		return false;
 	}
 
+	public static int sucheAlle(int zeile, int spalte, char[][] lab) throws InterruptedException {
+		if (lab[zeile][spalte] == 'A') return 1;
+		if (lab[zeile][spalte] == '#' || lab[zeile][spalte] == '.') return 0;
+
+		lab[zeile][spalte] = '.';
+		printLabyrinth(lab);
+		sleep(50);
+
+		int[][] values = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+
+		int res = 0;
+		for (int[] i : values) {
+			res += sucheAlle(zeile + i[0], spalte + i[1], lab);
+		}
+		lab[zeile][spalte] = ' ';
+
+		return res;
+	}
+
 	public static void main(String[] args) throws InterruptedException {
 		char[][] labyrinth = fromStrings(maps[2]);
 		printLabyrinth(labyrinth);
