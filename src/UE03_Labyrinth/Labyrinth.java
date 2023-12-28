@@ -87,8 +87,11 @@ public class Labyrinth {
 	 * @throws InterruptedException    für die verlangsamte Ausgabe mit sleep()
 	 */
 	public static boolean suchen(int zeile, int spalte, char[][] lab) throws InterruptedException {
-		// TODO Code fehlt noch
-		// nur lab[zeile][spalte] betrachten
+		if (lab[zeile][spalte] == 'A') return true;
+		if (lab[zeile][spalte] != ' ') return false;
+
+
+
 		return false;
 	}
 
