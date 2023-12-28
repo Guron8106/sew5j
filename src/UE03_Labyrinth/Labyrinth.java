@@ -90,7 +90,14 @@ public class Labyrinth {
 		if (lab[zeile][spalte] == 'A') return true;
 		if (lab[zeile][spalte] != ' ') return false;
 
+		lab[zeile][spalte] = '.';
 
+		int[][] values = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+		for (int[] i : values) {
+			boolean step = suchen(zeile + i[0], spalte + i[1], lab);
+			if (step) return true;
+		}
+		lab[zeile][spalte] = ' ';
 
 		return false;
 	}
