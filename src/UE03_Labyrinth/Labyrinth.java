@@ -106,6 +106,13 @@ public class Labyrinth {
 		return false;
 	}
 
+	/**
+	 * Suche alle Wege
+	 * @param zeile     aktuelle Position
+	 * @param spalte     aktuelle Position
+	 * @param lab		labyrinth
+	 * @throws InterruptedException    für die verlangsamte Ausgabe mit sleep()
+	 */
 	public static int sucheAlle(int zeile, int spalte, char[][] lab) throws InterruptedException {
 		if (lab[zeile][spalte] == 'A') return 1;
 		if (lab[zeile][spalte] == '#' || lab[zeile][spalte] == '.') return 0;
