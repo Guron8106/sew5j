@@ -3,6 +3,8 @@ package UE03_Labyrinth;
 
 import java.util.Arrays;
 
+import static java.lang.Thread.sleep;
+
 public class Labyrinth {
 	public static String[][] maps = {{
 			"############",
@@ -91,6 +93,8 @@ public class Labyrinth {
 		if (lab[zeile][spalte] != ' ') return false;
 
 		lab[zeile][spalte] = '.';
+		printLabyrinth(lab);
+		sleep(500);
 
 		int[][] values = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 		for (int[] i : values) {
