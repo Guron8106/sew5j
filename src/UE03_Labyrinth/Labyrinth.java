@@ -1,4 +1,4 @@
-
+package UE03_Labyrinth;
 //TODO: Mein Name in der Javadoc
 
 public class Labyrinth {
