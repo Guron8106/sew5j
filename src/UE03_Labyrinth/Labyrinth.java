@@ -76,7 +76,7 @@ public class Labyrinth {
 	 * @param lab
 	 */
 	public static void printLabyrinth(char[][] lab) {
-		// TODO Code fehlt noch
+		Arrays.stream(lab).forEach(System.out::println);
 	}
 
 	/**
