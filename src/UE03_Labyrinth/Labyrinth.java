@@ -136,6 +136,6 @@ public class Labyrinth {
 		char[][] labyrinth = fromStrings(maps[2]);
 		printLabyrinth(labyrinth);
 		System.out.println("Ausgang gefunden: " + (suchen(5, 5, labyrinth) ? "ja" : "nein"));
-		// TODO: System.out.println("Anzahl Wege: " + suchenAlle(5, 5, labyrinth));
+		System.out.println("Ausgang gefunden: " + (sucheAlle(5, 5, labyrinth)));
 	}
 }
