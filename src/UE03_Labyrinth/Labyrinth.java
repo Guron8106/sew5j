@@ -1,5 +1,11 @@
 package UE03_Labyrinth;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 import static java.lang.Thread.sleep;
 
 
@@ -123,8 +129,8 @@ public class Labyrinth {
         if (lab[zeile][spalte] == '#' || lab[zeile][spalte] == '.') return 0;
 
         lab[zeile][spalte] = '.';
-        printLabyrinth(lab);
-        sleep(50);
+        //printLabyrinth(lab);
+        //sleep(50);
 
         int[][] values = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
@@ -137,11 +143,29 @@ public class Labyrinth {
         return res;
     }
 
+    /**
+     * Reading Maze from txt File
+     *
+     * @param file Path to the txt file
+     * @return List of strings, each representing a line in the file
+     * @throws IOException If an input or output exception occurred
+     */
+    public String[] readMaze(String file) throws IOException {
+        List<String> lines = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                lines.add(line.trim());
+            }
+        }
+        return lines.toArray(new String[0]);
+    }
+
 
     public static void main(String[] args) throws InterruptedException {
         char[][] labyrinth = fromStrings(maps[2]);
         printLabyrinth(labyrinth);
-        System.out.println("Ausgang gefunden: " + (suchen(5, 5, labyrinth) ? "ja" : "nein"));
+       // System.out.println("Ausgang gefunden: " + (suchen(5, 5, labyrinth) ? "ja" : "nein"));
         System.out.println("Ausgang gefunden: " + (sucheAlle(5, 5, labyrinth)));
     }
 }
