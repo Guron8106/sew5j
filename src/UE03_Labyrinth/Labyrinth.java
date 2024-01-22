@@ -109,7 +109,9 @@ public class Labyrinth {
         int[][] values = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
         for (int[] i : values) {
             boolean step = suchen(zeile + i[0], spalte + i[1], lab);
-            if (step) return true;
+            if (step) {
+                return true;
+            }
         }
         lab[zeile][spalte] = ' ';
 
