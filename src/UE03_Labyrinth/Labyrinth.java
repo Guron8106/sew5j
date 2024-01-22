@@ -1,10 +1,11 @@
 package UE03_Labyrinth;
-//TODO: Mein Name in der Javadoc
-
 import java.util.Arrays;
-
 import static java.lang.Thread.sleep;
 
+
+/**
+ * Author: Karanbir Guron 5AX
+ */
 public class Labyrinth {
     public static String[][] maps = {{
             "############",
