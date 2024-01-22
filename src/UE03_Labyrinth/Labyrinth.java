@@ -150,7 +150,7 @@ public class Labyrinth {
      * @return List of strings, each representing a line in the file
      * @throws IOException If an input or output exception occurred
      */
-    public String[] readMaze(String file) throws IOException {
+    public static String[] readMaze(String file) throws IOException {
         List<String> lines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
@@ -162,8 +162,10 @@ public class Labyrinth {
     }
 
 
-    public static void main(String[] args) throws InterruptedException {
-        char[][] labyrinth = fromStrings(maps[2]);
+    public static void main(String[] args) throws InterruptedException, IOException {
+        //char[][] labyrinth = fromStrings(maps[2]);
+        char[][] labyrinth = fromStrings(readMaze("src/UE03_Labyrinth/l1.txt"));
+
         printLabyrinth(labyrinth);
        // System.out.println("Ausgang gefunden: " + (suchen(5, 5, labyrinth) ? "ja" : "nein"));
         System.out.println("Ausgang gefunden: " + (sucheAlle(5, 5, labyrinth)));
