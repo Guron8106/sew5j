@@ -84,7 +84,7 @@ public class Labyrinth {
     /**
      * Ausgabe des Layrinths
      *
-     * @param lab
+     * @param lab labyrinth
      */
     public static void printLabyrinth(char[][] lab) {
         Arrays.stream(lab).forEach(System.out::println);
@@ -95,7 +95,7 @@ public class Labyrinth {
      *
      * @param zeile  aktuelle Position
      * @param spalte aktuelle Position
-     * @param lab
+     * @param lab    labyrinth
      * @throws InterruptedException für die verlangsamte Ausgabe mit sleep()
      */
     public static boolean suchen(int zeile, int spalte, char[][] lab) throws InterruptedException {
