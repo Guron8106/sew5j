@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 
 /**
  * Graph Klasse, berechnet liest CSV-Dateien ein und läuft den Dijkstra Algorithmus über die Daten
- *
  * @author Karanbir Guron
  */
 public class Graph implements IOfferDistance {
