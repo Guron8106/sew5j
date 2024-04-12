@@ -1,11 +1,12 @@
-package u06_dijkstra.src;
+package UE04_Djikstra;
 
 /**
  * Edge class die ein Node zu einem benachbarten Node verbindet
  *
- * @author Lorenz Bauer
+ * @author Karanbir Guron
  */
 public class Edge implements Comparable<Edge> {
+
 
     /**
      * Die Distanz zum Nachbarn
