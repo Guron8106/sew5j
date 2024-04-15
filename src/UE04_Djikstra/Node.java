@@ -1,11 +1,11 @@
-package u06_dijkstra.src;
+package UE04_Djikstra;
 
 import java.util.TreeSet;
 
 /**
  * Node-Klasse für den Graphen
  *
- * @author Lorenz Bauer
+ * @author Karanbir Guron
  */
 public class Node implements Comparable<Node> {
 

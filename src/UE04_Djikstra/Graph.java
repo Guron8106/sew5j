@@ -3,11 +3,13 @@ package UE04_Djikstra;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /**
  * Graph Klasse, berechnet liest CSV-Dateien ein und läuft den Dijkstra Algorithmus über die Daten
+ *
  * @author Karanbir Guron
  */
 public class Graph implements IOfferDistance {
@@ -36,8 +38,7 @@ public class Graph implements IOfferDistance {
                 if (line.startsWith(";")) {
                     nodes.addAll(Arrays.stream(line.split(";"))
                             .filter(n -> !n.isEmpty())
-                            .map(Node::new)
-                            .collect(Collectors.toList()));
+                            .map(Node::new).toList());
                 } else {
                     String[] daten = line.split(";", -1);
 
